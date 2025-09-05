@@ -1,0 +1,31 @@
+.card-product {
+  border: 1.5px solid #46b0fb;
+}
+
+.card-product {
+  background-origin: border-box;
+  border-radius: 16px;
+  border: none;
+  /* width: 97px; */
+  width: 100%;
+  height: 114px;
+  background-size: 210%;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.4px;
+  font-style: medium;
+  font-weight: 500;
+  padding: 8px;
+  font-family: "Inter", sans-serif;
+  transform: all 0.5s ease;
+}
+
+.card-product > p {
+  width: 81px;
+}
