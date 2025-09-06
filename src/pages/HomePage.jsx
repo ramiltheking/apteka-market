@@ -1,44 +1,58 @@
 import { useState } from "react";
 import { Footer } from "../components/Footer";
 import { ProductCarousel } from "../components/ProductCarousel";
+import { SearchPanel } from "../components/SearchPanel";
+import { Link } from "react-router-dom";
 import "../css/HomePage.css";
 
 export function HomePage() {
   const [delivery, setDelivery] = useState({
     mode: false,
-    adress: "г. Петропавловск, п. Прокофьева, ул. Жамбыла Жабаева, д. 142б",
-    time: 0,
+    addr: "г. Петропавловск, п. Прокофьева, ул. Жамбыла Жабаева, д. 142б",
+    time: 30,
   });
 
   function btnDeliverySwitch(m) {
-    setDelivery({ ...delivery, mode: m }); 
+    setDelivery({ ...delivery, mode: m });
   }
 
   return (
     <>
-      <div>
-        <button
-          className={`btn-delivery ${delivery.mode ? "open" : ""}`}
-          onClick={() => btnDeliverySwitch(true)}
-        >
-          Доставка
-        </button>
-        <button
-          className={`btn-delivery ${delivery.mode ? "" : "open"}`}
-          onClick={() => btnDeliverySwitch(false)}
-        >
-          Самовывоз
-        </button>
-      </div>
+      <div className="navigation-bar">
+        <div className="control-mode">
+          <button
+            className={`btn-delivery ${delivery.mode ? "open" : ""}`}
+            onClick={() => btnDeliverySwitch(true)}
+          >
+            Доставка
+          </button>
+          <button
+            className={`btn-delivery ${delivery.mode ? "" : "open"}`}
+            onClick={() => btnDeliverySwitch(false)}
+          >
+            Самовывоз
+          </button>
+        </div>
 
-      <div className="delivery-addr">
-        <p>{delivery.addr}</p>
-        <p>
-          Время доставки <span>~ {delivery.time} мин.</span>
-        </p>
+        <div className="delivery-addr">
+          <div className="addr-row">
+            <img src="/icons/addr-icon.svg" alt="addr-icon" />
+
+            <p>{delivery.addr}</p>
+
+            <Link to="/list_phar">
+              <img src="/icons/addr-icon-right.svg" alt="addr-icon-right" />
+            </Link>
+          </div>
+          <p className="addr-row-time">
+            Время доставки <span>~ {delivery.time} мин.</span>
+          </p>
+        </div>
       </div>
 
       <ProductCarousel />
+
+      <SearchPanel />
 
       <Footer />
     </>

@@ -10,14 +10,14 @@ export function ProductCarousel() {
 
   const goToStart = () => {
     if (swiperRef.current) {
-      swiperRef.current.swiper.slideTo(0); // 👈 в начало
+      swiperRef.current.swiper.slideTo(0); // В начало
     }
   };
 
   const goToEnd = () => {
     if (swiperRef.current) {
       const swiper = swiperRef.current.swiper;
-      swiper.slideTo(swiper.slides.length - 1); // 👈 перелистываем на последний
+      swiper.slideTo(swiper.slides.length - 1); // В конец
     }
   };
 
@@ -68,7 +68,7 @@ export function ProductCarousel() {
           onClick={goToStart}
           className="btn-to-end"
         >
-          <img src="/icons/scroll-right.svg" />
+          <img src="/icons/scroll-right.svg" alt="scroll-right"/>
         </button>
       )}
       {!showBackButton && (
@@ -85,13 +85,9 @@ export function ProductCarousel() {
           onClick={goToEnd}
           className="btn-to-end"
         >
-          <img src="/icons/scroll-right.svg" />
+          <img src="/icons/scroll-right.svg" alt="scroll-right"/>
         </button>
       )}
     </div>
   );
-}
-
-{
-  /* style={{ width: "97px", height: "114px"}}  */
 }
