@@ -1,15 +1,11 @@
-.card-product {
-  border: 1.5px solid #46b0fb;
-}
-
-.card-product {
+.card-product-carousel {
   background-origin: border-box;
   border-radius: 16px;
   border: none;
   /* width: 97px; */
   width: 100%;
   height: 114px;
-  background-size: 210%;
+  background-size: 200%;
   background-position: center;
   display: flex;
   align-items: end;
@@ -23,6 +19,6 @@
   transform: all 0.5s ease;
 }
 
-.card-product > p {
+.card-product-carousel > p {
   width: 81px;
 }

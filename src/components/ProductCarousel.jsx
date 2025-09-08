@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useRef, useState } from "react";
 
-import { CardProduct } from "../components/CardProduct";
+import { CardProductCarousel } from "./CardProductCarousel";
 
 export function ProductCarousel() {
   const swiperRef = useRef(null);
@@ -49,7 +49,7 @@ export function ProductCarousel() {
       >
         {products.map((p) => (
           <SwiperSlide key={p.id}>
-            <CardProduct img={p.img} title={p.title} href="#" />
+            <CardProductCarousel img={p.img} title={p.title} href="#" />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Footer } from "../components/Footer";
 import { ProductCarousel } from "../components/ProductCarousel";
 import { SearchPanel } from "../components/SearchPanel";
+import { RecommendedSection } from "../components/RecommendedSection";
 import { Link } from "react-router-dom";
 import "../css/HomePage.css";
 
@@ -53,6 +54,8 @@ export function HomePage() {
       <ProductCarousel />
 
       <SearchPanel />
+
+      <RecommendedSection />
 
       <Footer />
     </>

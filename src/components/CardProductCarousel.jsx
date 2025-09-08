@@ -1,12 +1,12 @@
-import "../css/CardProduct.css";
+import "../css/CardProductCarousel.css";
 
-export function CardProduct({ img, title, href }) {
+export function CardProductCarousel({ img, title, href }) {
   return (
     <a
       style={{
         backgroundImage: `url( ${img} )`,
       }}
-      className="card-product"
+      className="card-product-carousel"
       href={href}
     >
       <p>{ title }</p>

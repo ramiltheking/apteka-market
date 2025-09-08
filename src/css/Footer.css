@@ -4,11 +4,15 @@ footer {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 20px 24px 24px 24px;
 }
 
 .icon {
   text-decoration: none;
   color: #8e8e8e;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
   text-align: center;
 }
 
