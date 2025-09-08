@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { useRef, useState } from "react";
 
+import { useRef, useState } from "react";
 import { CardProductCarousel } from "./CardProductCarousel";
 
 export function ProductCarousel() {

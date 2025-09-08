@@ -1,0 +1,79 @@
+.coupon {
+    display: flex;
+    align-items: center;
+    background-color: #EB6C2E;
+    /* фон купона */
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    position: relative;
+    width: fit-content;
+}
+
+/* Вырезы по бокам */
+.coupon::before,
+.coupon::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    background: #fff;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    /* border-radius: 50%; */
+    /* transform: translateY(-50%); */
+}
+
+.coupon::before {
+    left: 45px;
+    top: 0px;
+}
+
+.coupon::after {
+    left: 45px;
+    bottom: 0;
+     transform: rotate(180deg);
+}
+
+.coupon::first-line {
+    width: 50%;
+    height: 1px;
+}
+
+/* Иконка */
+.coupon-icon {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coupon-icon svg {
+    fill: currentColor;
+    /* берёт цвет текста */
+    color: #fff;
+    /* делает svg белым */
+    width: 20px;
+    height: 20px;
+}
+
+/* Текст */
+.coupon-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.coupon-text .title {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.coupon-text .subtitle {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.9;
+}
