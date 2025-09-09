@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { PharPage } from './pages/PharPage';
+import { CatalogPage } from './pages/CatalogPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+import { StrictCatalogPage } from "./pages/StrictCatalogPage";
 
 function App() {
   return (
@@ -8,6 +11,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list_phar" element={<PharPage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/catalog/:category" element={<StrictCatalogPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

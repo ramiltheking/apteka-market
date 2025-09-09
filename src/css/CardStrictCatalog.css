@@ -1,0 +1,146 @@
+.card-product-strict{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.product-strict-image {
+    gap: 10px;
+    height: 134px;
+    width: 100%;
+    position: relative;
+}
+
+.product-strict-image>img {
+    height: 134px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.hit {
+    padding: 4px 6px;
+    background-color: #eb6c2e;
+    gap: 2px;
+    border-radius: 4px;
+    font-size: 8px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.heart {
+    /* padding: 4px 6px; */
+    background: none;
+    gap: 2px;
+    border: none;
+    font-size: 8px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.product-strict-info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+}
+
+.name-label {
+    width: 100%;
+    height: auto;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 12px;
+    color: #5f5f5f;
+}
+
+.weight {
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.piece {
+    font-weight: 400;
+    font-size: 10px;
+    color: #8e8e8e;
+    text-align: left;
+    width: 100%;
+}
+
+.price-btn {
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-btn>img {
+    margin-right: 15px;
+}
+
+.product-strict-price {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 12px;
+    color: #5f5f5f;
+}
+
+.discount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.old-price {
+    font-size: 10px;
+    color: #8e8e8e;
+    position: relative;
+}
+
+.old-price::before {
+    width: 100%;
+    height: 1px;
+    background-color: #eb6c2e;
+    content: "";
+    position: absolute;
+    transform: rotate(-3deg);
+    top: 50%;
+}
+
+.discount-value {
+    transform: rotate(-3deg);
+    font-weight: 600;
+    font-size: 8px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #eb6c2e;
+    gap: 10px;
+    padding: 2px;
+    display: inline-block;
+    letter-spacing: 0px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+}

@@ -1,79 +1,108 @@
 .coupon {
-    display: flex;
-    align-items: center;
-    background-color: #EB6C2E;
-    /* фон купона */
-    color: #fff;
-    border-radius: 8px;
-    padding: 10px 15px;
-    position: relative;
-    width: fit-content;
+  display: flex;
+  align-items: center;
+  background-color: #eb6c2e;
+  color: #fff;
+  border-radius: 8px;
+  /* padding: 10px 15px; */
+  position: relative;
+  width: fit-content;
+  width: 214px;
+  height: 44px;
+  text-decoration: none;
 }
 
 /* Вырезы по бокам */
 .coupon::before,
 .coupon::after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 5px;
-    background: #fff;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 100%;
-    border-bottom-right-radius: 100%;
-    /* border-radius: 50%; */
-    /* transform: translateY(-50%); */
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  background: #fff;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  /* border-radius: 50%; */
+  /* transform: translateY(-50%); */
 }
 
 .coupon::before {
-    left: 45px;
-    top: 0px;
+  left: 37px;
+  top: 0px;
 }
 
 .coupon::after {
-    left: 45px;
-    bottom: 0;
-     transform: rotate(180deg);
+  left: 37px;
+  bottom: 0;
+  transform: rotate(180deg);
 }
 
 .coupon::first-line {
-    width: 50%;
-    height: 1px;
+  width: 50%;
+  height: 1px;
 }
 
 /* Иконка */
 .coupon-icon {
-    margin-right: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px #fff dashed;
 }
 
 .coupon-icon svg {
-    fill: currentColor;
-    /* берёт цвет текста */
-    color: #fff;
-    /* делает svg белым */
-    width: 20px;
-    height: 20px;
+  fill: currentColor;
+  /* берёт цвет текста */
+  color: #fff;
+  /* делает svg белым */
+  width: 20px;
+  height: 20px;
 }
 
 /* Текст */
 .coupon-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
 .coupon-text .title {
-    font-weight: bold;
-    font-size: 14px;
-    margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  margin: 0;
+  line-height: 16px;
 }
 
 .coupon-text .subtitle {
+  font-weight: 400;
+  font-size: 10px;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 16px;
+}
+
+.scanpay {
+    background-color: #46B0FB;
+    border-radius: 8px;
+    gap: 8px;
+    padding: 12px;
+    letter-spacing: 1.3%;
     font-size: 12px;
-    margin: 0;
-    opacity: 0.9;
+    color: #fff;
+    text-decoration: none;
+}
+
+.widgets {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    position: fixed;
+    bottom: 90px;
+    z-index: 1;
 }

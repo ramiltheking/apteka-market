@@ -7,10 +7,11 @@
 body {
   width: 100%;
   height: auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 17px 17px 0px 17px;
+  justify-content: space-around;
+  padding: 10px 17px 0px 17px;
   flex-direction: column;
   background-color: #ffffff;
   font-style: medium;
@@ -19,5 +20,5 @@ body {
   line-height: 16px;
   letter-spacing: -0.4px;
   gap: 20px;
-  padding-bottom: 12vh;
+  padding-bottom: 11vh;
 }

@@ -6,7 +6,8 @@ export function Widgets() {
       <a className="scanpay" href="/scanpay">
         <img src="/icons/scanpay.svg" alt="scanpay" /> SkanPay
       </a>
-      <div className="coupon">
+      <a href="/coupon" className="coupon">
+        
         <div className="coupon-icon">
           <svg
             width="20"
@@ -53,11 +54,12 @@ export function Widgets() {
             />
           </svg>
         </div>
+
         <div className="coupon-text">
           <p className="title">Доступна скидка 10%</p>
           <p className="subtitle">На первый заказ от 4 500,00 ₸</p>
         </div>
-      </div>
+      </a>
     </div>
   );
 }
