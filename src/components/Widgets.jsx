@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import "../css/Widgets.css";
 
 export function Widgets() {
   return (
     <div className="widgets">
-      <a className="scanpay" href="/scanpay">
+      <Link className="scanpay" to="/scanpay">
         <img src="/icons/scanpay.svg" alt="scanpay" /> SkanPay
-      </a>
-      <a href="/coupon" className="coupon">
+      </Link>
+      <Link to="/coupon" className="coupon">
         
         <div className="coupon-icon">
           <svg
@@ -59,7 +60,7 @@ export function Widgets() {
           <p className="title">Доступна скидка 10%</p>
           <p className="subtitle">На первый заказ от 4 500,00 ₸</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

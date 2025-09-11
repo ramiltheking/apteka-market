@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/SearchPanel.css";
+import { Link } from "react-router-dom";
 
 export function SearchPanel() {
   const notif = 24;
@@ -25,10 +26,10 @@ export function SearchPanel() {
         />
       </div>
 
-      <a href="/favorites" className="favorites">
+      <Link to="/favorites" className="favorites">
         <span className={`${notif > 0 ? "notif" : "none"}`}>{notif}</span>
         <img src="/icons/heart.svg" alt="heart" />
-      </a>
+      </Link>
     </div>
   );
 }

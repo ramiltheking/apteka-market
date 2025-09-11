@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import "../css/CardProductRecommended.css";
 
 export function CardProductRecommended({ product }) {
   return (
-    <a className="card-product-recommended" href={`/products/${product.id}`}>
+    <Link className="card-product-recommended" to={`/products/${product.id}`}>
       <div className="product-image">
         <img src={product.img} alt="product-img" />
         {product.hit ? <span className="hit">HIT</span> : null}
@@ -34,6 +35,6 @@ export function CardProductRecommended({ product }) {
         </div>
         <img src="/icons/grocery.svg" alt="grocery"/>
       </button>
-    </a>
+    </Link>
   );
 }

@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
 import "../css/CardCatalog.css";
 
 export function CardCatalog({ img, title, href }) {
   return (
-    <a
+    <Link
       className="card-catalog"
-      href={`/catalog/${href}`}
+      to={`/catalog/${href}`}
     >
       <p>{title}</p>
       <div className="card-catalog-img" style={{backgroundImage: `url('${img}')`}}></div>
-    </a>
+    </Link>
   );
 }

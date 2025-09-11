@@ -3,6 +3,7 @@ import { CardProductRecommended } from "./CardProductRecommended";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../css/RecommendedSection.css";
+import { Link } from "react-router-dom";
 
 export function RecommendedSection() {
   const [products, setProducts] = useState([]);
@@ -106,7 +107,7 @@ export function RecommendedSection() {
     <div style={{ width: "100%", position: "relative", gap: "20px" }}>
       <div className="recommended-title">
         <h2>Вам может понравиться</h2>
-        <a href="/catalog">Весь список {">"}</a>
+        <Link to="/catalog">Весь список {">"}</Link>
       </div>
       <Swiper width={350} slidesPerView="2.5">
         {products.map((p) => (

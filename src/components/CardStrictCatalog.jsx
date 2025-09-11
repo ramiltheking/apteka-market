@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "../css/CardStrictCatalog.css";
+import { Link } from "react-router-dom";
 
 export function CardStrictCatalog({ product }) {
   const [favorite, setFavorite] = useState([1, 2]);
 
   return (
-    <a className="card-product-strict" href={`/products/${product.id}`}>
+    <Link className="card-product-strict" to={`/products/${product.id}`}>
       <div className="product-strict-image">
         <img src={product.img} alt="product-img" />
         {product.hit ? <span className="hit">HIT</span> : null}
@@ -51,6 +52,6 @@ export function CardStrictCatalog({ product }) {
         </div>
         <img src="/icons/grocery.svg" alt="grocery" />
       </button>
-    </a>
+    </Link>
   );
 }

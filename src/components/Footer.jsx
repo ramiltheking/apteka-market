@@ -20,7 +20,7 @@ export function Footer() {
 
         <p>Главная</p>
       </Link>
-      <Link to="/catalog" className={`icon ${location.pathname === "/catalog" ?'open-nav' : ""}`}>
+      <Link to="/catalog" className={`icon ${location.pathname.includes("/catalog") ?'open-nav' : ""}`}>
         <svg
           width="20"
           height="20"

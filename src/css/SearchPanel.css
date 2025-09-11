@@ -4,6 +4,7 @@
   align-items: center;
   position: relative;
   min-width: 290px;
+  margin-right: auto;
 }
 
 .search-input {
@@ -54,7 +55,7 @@
 
 .search {
   display: flex;
-  gap: 12px;
+  width: 100%;
 }
 
 .notif {

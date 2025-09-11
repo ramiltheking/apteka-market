@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import "../css/CardProductCarousel.css";
 
 export function CardProductCarousel({ img, title, href }) {
   return (
-    <a
+    <Link
       style={{
         backgroundImage: `url( ${img} )`,
       }}
       className="card-product-carousel"
-      href={href}
+      to={href}
     >
       <p>{ title }</p>
-    </a>
+    </Link>
   );
 }
