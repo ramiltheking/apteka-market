@@ -200,13 +200,17 @@
 .chapter-block {
   width: 100%;
   height: auto;
+  display: flex;
+  align-items: start;
+  flex-flow: wrap;
+  gap: 8px;
 }
 
 .chapter-btn {
   width: auto;
   border-radius: 8px;
   background-color: #f8f8f8;
-  padding: 10px 16px;
+  padding: 10px 14px;
   gap: 10px;
   color: #1e1e1e;
   font-size: 14px;
@@ -215,13 +219,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
 }
 
 .chapter-btn-open {
   width: auto;
   border-radius: 8px;
   background-color: #46b0fb;
-  padding: 10px 16px;
+  padding: 10px 14px;
   gap: 10px;
   color: #ffffff;
   font-size: 14px;
@@ -230,4 +236,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
 }

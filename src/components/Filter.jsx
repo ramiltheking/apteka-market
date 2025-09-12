@@ -1,5 +1,5 @@
 import { ChapterBtn } from "./ChapterBtn";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Filter({ setModalOpen, setModalTitle, setModalContent }) {
   const [filter, setFilter] = useState({
@@ -7,6 +7,10 @@ export function Filter({ setModalOpen, setModalTitle, setModalContent }) {
     promotion: false,
     country: [],
   });
+
+  useEffect(() => {
+    console.log("Сортировка:", filter);
+  }, [filter]);
 
   return (
     <label
@@ -62,8 +66,8 @@ export function Filter({ setModalOpen, setModalTitle, setModalContent }) {
                 setFilter={setFilter}
               />
             </div>
+             <h2 className="chapter-title">Акции и товары со скидкой</h2>
             <div className="chapter-block">
-              <h2 className="chapter-title">Акции и товары со скидкой</h2>
               <ChapterBtn
                 text="Скидки"
                 type="promotion"
@@ -71,8 +75,8 @@ export function Filter({ setModalOpen, setModalTitle, setModalContent }) {
                 setFilter={setFilter}
               />
             </div>
+            <h2 className="chapter-title">Страна</h2>
             <div className="chapter-block">
-              <h2 className="chapter-title">Страна</h2>
               <ChapterBtn
                 text="Казахстан"
                 type="country"
