@@ -1,102 +1,61 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { CardCartSection } from "../components/CardCartSection";
 
-export function CartSection() {
-  const [products, setProducts] = useState([]);
-
+export function CartSection({ products, operPr, total }) {
   useEffect(() => {
-    setProducts([
-      {
-        id: 1,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img2.png",
-        price: 369.01,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-      },
-      {
-        id: 2,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-      },
-      {
-        id: 3,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-      },
-      {
-        id: 4,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-      },
-      {
-        id: 5,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-      },
-      {
-        id: 6,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: false,
-        discount: {
-          value: false,
-          discount_value: -15,
-          old_price: 532.99,
-        },
-      },
-    ]);
-  }, []);
+    console.log(products);
+  }, [products]);
 
-  return <section className="cart-section"></section>;
+  function PayBtn() {
+    return (
+      <button className="pay-btn">
+        <div className="pay-price">
+          <img src="/icons/pay.svg" alt="pay" />
+          <p>{total} ₸</p>
+        </div>
+        <hr />
+        <Link className="pay-link" to="/cart/pay">
+          Перейти к оформлению
+        </Link>
+      </button>
+    );
+  }
+
+  return (
+    <section className="cart-section">
+      {products.length > 0 ? (
+        <>
+          {products.map((p) => (
+            <CardCartSection key={p.id} product={p} operPr={operPr} />
+          ))}
+          <PayBtn />
+        </>
+      ) : (
+        <>
+          <div className="cart-clear-div">
+            <img src="/icons/basket-clear.svg" alt="basket-clear" />
+
+            <div>
+              <h2 className="cart-clear-title">В корзине пусто!</h2>
+              <p className="cart-clear-desc">
+                Выберите что-нибутьиз аптек, что бы оформить заказ
+              </p>
+            </div>
+          </div>
+
+          <div className="cart-clear-widget">
+            <Link to="/login" className="sign-in">
+              <img src="/icons/sign-in.svg" alt="sign-in" />
+              <p>Войти</p>
+            </Link>
+            <Link to="/catalog" className="add-basket">
+              <img src="/icons/add-to-busket.svg" alt="add-to-busket" />
+              <p>За покупками</p>
+            </Link>
+          </div>
+        </>
+      )}
+    </section>
+  );
 }
