@@ -60,7 +60,7 @@ export function CardCartSection({ product, operPr }) {
                 operPr(product.id, "-");
               }}
             >
-              {product.value==1 ? (<img src="/icons/clear.svg" alt="clear" width={16} />) : "-"}
+              {product.value===1 ? (<img src="/icons/clear.svg" alt="clear" width={16} />) : "-"}
             </span>
             {product.value} шт.
             <span

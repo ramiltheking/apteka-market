@@ -1,20 +1,22 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
-import { PharPage } from './pages/PharPage';
-import { CatalogPage } from './pages/CatalogPage';
-import { CartPage } from './pages/CartPage';
-import { NotFoundPage } from './pages/NotFoundPage';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { PharPage } from "./pages/PharPage";
+import { CatalogPage } from "./pages/CatalogPage";
+import { CartPage } from "./pages/CartPage";
+import { ProductPage } from "./pages/ProductPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import { StrictCatalogPage } from "./pages/StrictCatalogPage";
 
 function App() {
   return (
-   <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list_phar" element={<PharPage />} />
         <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/catalog/:category" element={<StrictCatalogPage />} />
+        <Route path="/catalog/:categ" element={<StrictCatalogPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

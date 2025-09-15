@@ -2,23 +2,117 @@ import { StrictCatalogSection } from "../components/StrictCatalogSection";
 import { SearchPanel } from "../components/SearchPanel";
 import { Widgets } from "../components/Widgets";
 import { Footer } from "../components/Footer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export function StrictCatalogPage() {
   const navigate = useNavigate();
-  // let { category } = useParams();
+  let { categ } = useParams();
+  const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState(null);
+  useEffect(() => {
+    // Тут логика получания категории с сервера
+
+    setCategory({
+      id: 1,
+      name: "Лекарственные средства",
+      img: "/images/catalog_img1.png",
+      slug: "lecarstvtnnie-sredstva",
+    });
+
+    setProducts([
+      {
+        id: 1,
+        name: "Французский БАГЕТ свежеиспечененный",
+        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
+        img: "/images/carousel_img2.png",
+        price: 369.01,
+        weight: 200.0,
+        piece: false,
+        hit: false,
+        new: true,
+        favorite: true,
+        discount: { value: true, discount_value: -15, old_price: 1099.99 },
+      },
+      {
+        id: 2,
+        name: "Французский БАГЕТ свежеиспечененный",
+        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
+        img: "/images/carousel_img1.png",
+        price: 369.0,
+        weight: 200.0,
+        piece: true,
+        hit: true,
+        new: false,
+        favorite: false,
+        discount: { value: true, discount_value: -15, old_price: 1099.99 },
+      },
+      {
+        id: 3,
+        name: "Французский БАГЕТ свежеиспечененный",
+        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
+        img: "/images/carousel_img1.png",
+        price: 369.0,
+        weight: 200.0,
+        piece: true,
+        hit: true,
+        new: false,
+        favorite: false,
+        discount: { value: true, discount_value: -15, old_price: 1099.99 },
+      },
+      {
+        id: 4,
+        name: "Французский БАГЕТ свежеиспечененный",
+        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
+        img: "/images/carousel_img1.png",
+        price: 369.0,
+        weight: 200.0,
+        piece: true,
+        hit: false,
+        new: true,
+        favorite: false,
+        discount: { value: true, discount_value: -15, old_price: 1099.99 },
+      },
+      {
+        id: 5,
+        name: "Французский БАГЕТ свежеиспечененный",
+        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
+        img: "/images/carousel_img1.png",
+        price: 369.0,
+        weight: 200.0,
+        piece: true,
+        hit: true,
+        new: false,
+        favorite: false,
+        discount: { value: true, discount_value: -15, old_price: 1099.99 },
+      },
+      {
+        id: 6,
+        name: "Французский БАГЕТ свежеиспечененный",
+        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
+        img: "/images/carousel_img1.png",
+        price: 369.0,
+        weight: 200.0,
+        piece: true,
+        hit: false,
+        new: true,
+        favorite: false,
+        discount: { value: false, discount_value: -15, old_price: 532.99 },
+      },
+    ]);
+  }, [categ]);
 
   return (
     <>
       <div className="navigation-bar">
         <button className="control-title" onClick={() => navigate(-1)}>
           <span>{"<"}</span>
-          <h2>Каталог</h2>
+          <h2>{category.name}</h2>
         </button>
         <SearchPanel />
       </div>
 
-      <StrictCatalogSection />
+      <StrictCatalogSection products={products} />
 
       <Widgets />
       <Footer />
