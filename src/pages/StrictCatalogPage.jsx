@@ -107,7 +107,7 @@ export function StrictCatalogPage() {
       <div className="navigation-bar">
         <button className="control-title" onClick={() => navigate(-1)}>
           <span>{"<"}</span>
-          <h2>{category.name}</h2>
+          <h2>{category ? category.name : null}</h2>
         </button>
         <SearchPanel />
       </div>
