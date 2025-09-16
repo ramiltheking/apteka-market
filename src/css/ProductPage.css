@@ -3,11 +3,11 @@
   position: relative;
 }
 
-.swiper {
+.product-swiper {
   width: 100%; /* ограничиваем сам контейнер */
   max-width: 500px; /* или 100%, если контейнер родителя уже ограничен */
   margin: 0 auto;
-  height: 260px; /* центрируем */
+  height: 260px;
   border-radius: 12px;
 }
 

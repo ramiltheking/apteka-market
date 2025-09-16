@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../stores/AppContext";
 import { Footer } from "../components/Footer";
 import { ProductCarousel } from "../components/ProductCarousel";
 import { SearchPanel } from "../components/SearchPanel";
@@ -8,11 +9,7 @@ import { Link } from "react-router-dom";
 import "../css/HomePage.css";
 
 export function HomePage() {
-  const [delivery, setDelivery] = useState({
-    mode: false,
-    addr: "г. Петропавловск, п. Прокофьева, ул. Жамбыла Жабаева, д. 142б",
-    time: 30,
-  });
+   const { delivery, setDelivery } = useContext(AppContext);
 
   function btnDeliverySwitch(m) {
     setDelivery({ ...delivery, mode: m });

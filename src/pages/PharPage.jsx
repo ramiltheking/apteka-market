@@ -3,13 +3,13 @@ import { Footer } from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 
 export function PharPage() {
-  const [delivery, setDelivery] = useState({
+  const [deliveryListMode, setDeliveryListMode] = useState({
     mode: true,
   });
   const navigate = useNavigate();
 
   function btnDeliverySwitch(m) {
-    setDelivery({ ...delivery, mode: m });
+    setDeliveryListMode({ ...deliveryListMode, mode: m });
   }
 
   return (
@@ -22,13 +22,13 @@ export function PharPage() {
 
         <div className="control-mode">
           <button
-            className={`btn-delivery ${delivery.mode ? "open" : ""}`}
+            className={`btn-delivery ${deliveryListMode.mode ? "open" : ""}`}
             onClick={() => btnDeliverySwitch(true)}
           >
             На карте
           </button>
           <button
-            className={`btn-delivery ${delivery.mode ? "" : "open"}`}
+            className={`btn-delivery ${deliveryListMode.mode ? "" : "open"}`}
             onClick={() => btnDeliverySwitch(false)}
           >
             Списком
@@ -36,7 +36,7 @@ export function PharPage() {
         </div>
       </div>
 
-      {delivery.mode ? (
+      {deliveryListMode.mode ? (
         <div className="phar-map">
           <iframe
             title="map"

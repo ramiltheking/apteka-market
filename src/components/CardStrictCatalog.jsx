@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../stores/AppContext";
 import "../css/CardStrictCatalog.css";
 import { Link } from "react-router-dom";
 
 export function CardStrictCatalog({ product }) {
-  const [favorite, setFavorite] = useState([1, 2]);
+  const { favorite, setFavorite } = useContext(AppContext);
+  const { setCart } = useContext(AppContext);
 
   return (
     <Link className="card-product-strict" to={`/products/${product.id}`}>
@@ -11,19 +13,27 @@ export function CardStrictCatalog({ product }) {
         <img src={product.img} alt="product-img" />
         {product.hit ? <span className="hit">HIT</span> : null}
         {product.new ? <span className="hit">NEW</span> : null}
-        {favorite.includes(product.id) ? (
-          <button
-            className="heart"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              setFavorite(favorite.filter((item) => item !== product.id));
-              console.log("Удалено!");
-            }}
-          >
-            <img src="/icons/heart.svg" alt="heart" />
-          </button>
-        ) : null}
+        <button
+          className={favorite.includes(product.id) ? "heart" : "heart-s"}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setFavorite((prev) => {
+              if (prev.includes(product.id)) {
+                console.log("Удалено!");
+                return prev.filter((item) => item !== product.id);
+              } else {
+                console.log("Добавлено!");
+                return [...prev, product.id];
+              }
+            });
+          }}
+        >
+          <img
+            src="/icons/heart.svg"
+            alt="heart"
+          />
+        </button>
       </div>
 
       <div className="product-strict-info">
@@ -38,7 +48,46 @@ export function CardStrictCatalog({ product }) {
         </p>
       </div>
 
-      <button className="price-btn">
+      <button
+        className="price-btn"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setCart((prev) => {
+            const exist = prev.find((item) => item.id === product.id);
+
+            if (exist) {
+              return prev.map((item) =>
+                item.id === product.id
+                  ? { ...item, value: item.value + 1 }
+                  : item
+              );
+            } else {
+              return [
+                ...prev,
+                {
+                  id: product.id,
+                  name: product.name,
+                  desc: product.desc,
+                  img: product.img,
+                  price: product.price,
+                  weight: product.weight,
+                  piece: product.piece,
+                  hit: product.hit,
+                  discount: {
+                    value: product.discount.value,
+                    discount_value: product.discount.discount_value,
+                    old_price: product.discount.old_price,
+                  },
+                  value: 1,
+                },
+              ];
+            }
+          });
+
+          console.log("Товар добавлен!");
+        }}
+      >
         <div className="product-strict-price">
           <p className="price">{product.price.toFixed(2)} ₸</p>
           {product.discount.value ? (

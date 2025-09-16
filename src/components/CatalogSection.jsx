@@ -6,6 +6,8 @@ export function CatalogSection() {
   const [catalogs, setCatalogs] = useState([]);
 
   useEffect(() => {
+    // Тут логика получения каталогов из бд
+
     setCatalogs([
       {
         id: 1,

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../stores/AppContext";
 import "../css/SearchPanel.css";
 import { Link } from "react-router-dom";
 
 export function SearchPanel() {
-  const notif = 24;
+  const { favorite } = useContext(AppContext);
   const [searchValue, setSearchValue] = useState("");
 
   return (
@@ -27,7 +28,7 @@ export function SearchPanel() {
       </div>
 
       <Link to="/favorites" className="favorites">
-        <span className={`${notif > 0 ? "notif" : "none"}`}>{notif}</span>
+        <span className={`${favorite && favorite.length > 0 ? "notif" : "none"}`}>{favorite.length}</span>
         <img src="/icons/heart.svg" alt="heart" />
       </Link>
     </div>

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../stores/AppContext";
 import "../css/CardCartSection.css";
 import { Link } from "react-router-dom";
 
 export function CardCartSection({ product, operPr }) {
-  const [favorite, setFavorite] = useState([1, 2]);
+  const { favorite, setFavorite } = useContext(AppContext);
 
   return (
     <Link className="card-product-cart" to={`/products/${product.id}`}>

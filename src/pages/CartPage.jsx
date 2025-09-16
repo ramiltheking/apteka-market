@@ -1,129 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AppContext } from "../stores/AppContext";
 import { Footer } from "../components/Footer";
 import { CartSection } from "../components/CartSection";
 import { Link } from "react-router-dom";
 import "../css/CartPage.css";
 
 export function CartPage() {
-  const [delivery, setDelivery] = useState({
-    mode: false,
-    addr: "г. Петропавловск, п. Прокофьева, ул. Жамбыла Жабаева, д. 142б",
-    time: 30,
-  });
+  const { delivery } = useContext(AppContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
-  const [products, setProducts] = useState([]);
+  const { cart, setCart } = useContext(AppContext);
 
   useEffect(() => {
-    setProducts([
-      {
-        id: 1,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img2.png",
-        price: 369.01,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-        value: 2,
-      },
-      {
-        id: 2,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-        value: 2,
-      },
-      {
-        id: 3,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-        value: 2,
-      },
-      {
-        id: 4,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-        value: 2,
-      },
-      {
-        id: 5,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: true,
-        discount: {
-          value: true,
-          discount_value: -15,
-          old_price: 1099.99,
-        },
-        value: 2,
-      },
-      {
-        id: 6,
-        name: "Французский БАГЕТ свежеиспечененный",
-        desc: "Французский БАГЕТ свежеиспечененный из муки вальяжной пшеницы",
-        img: "/images/carousel_img1.png",
-        price: 369.0,
-        weight: 200.0,
-        piece: true,
-        hit: false,
-        discount: {
-          value: false,
-          discount_value: -15,
-          old_price: 532.99,
-        },
-        value: 2,
-      },
-    ]);
-  }, []);
-
-  function totalP() {}
-
-  useEffect(() => {
-    const total = products.reduce((acc, p) => acc + p.value * p.price, 0);
+    const total = cart.reduce((acc, p) => acc + p.value * p.price, 0);
     setTotalPrice(total);
-  }, [products]);
+  }, [cart]);
 
   function operPr(id, oper) {
-    setProducts((prev) =>
+    setCart((prev) =>
       prev.flatMap((p) => {
         if (p.id !== id) return p;
 
@@ -145,7 +39,7 @@ export function CartPage() {
       <div className="navigation-bar">
         <div className="navigation-head">
           <h2 className="navigation-title">Корзина</h2>
-          <button className="cart-clear" onClick={()=>setProducts([])}>
+          <button className="cart-clear" onClick={()=>setCart([])}>
             Очистить <img src="/icons/clear.svg" alt="clear" />
           </button>
         </div>
@@ -166,7 +60,7 @@ export function CartPage() {
         </div>
       </div>
 
-      <CartSection products={products} operPr={operPr} total={totalPrice} />
+      <CartSection products={cart} operPr={operPr} total={totalPrice} />
 
       <Footer />
     </>

@@ -67,7 +67,7 @@ export function ProductCarousel() {
           onClick={goToStart}
           className="btn-to-end"
         >
-          <img src="/icons/scroll-right.svg" alt="scroll-right"/>
+          <img src="/icons/scroll-right.svg" alt="scroll-right" />
         </button>
       )}
       {!showBackButton && (
@@ -84,7 +84,7 @@ export function ProductCarousel() {
           onClick={goToEnd}
           className="btn-to-end"
         >
-          <img src="/icons/scroll-right.svg" alt="scroll-right"/>
+          <img src="/icons/scroll-right.svg" alt="scroll-right" />
         </button>
       )}
     </div>

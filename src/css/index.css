@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 10px 17px 0px 17px;
   flex-direction: column;
   background-color: #ffffff;

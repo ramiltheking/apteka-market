@@ -11,7 +11,7 @@ export function StrictCatalogPage() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState(null);
   useEffect(() => {
-    // Тут логика получания категории с сервера
+    // Тут логика получения категории с сервера
 
     setCategory({
       id: 1,
@@ -19,6 +19,8 @@ export function StrictCatalogPage() {
       img: "/images/catalog_img1.png",
       slug: "lecarstvtnnie-sredstva",
     });
+
+     // Тут логика получения продуктов по категории с сервера
 
     setProducts([
       {
