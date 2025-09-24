@@ -8,6 +8,7 @@ import { NotFoundPage } from "./pages/NotFoundPage";
 import { StrictCatalogPage } from "./pages/StrictCatalogPage";
 import { RegistrationPage } from "./pages/RegistrationPage";
 import { AppProvider } from "./stores/AppContext";
+import LRoute  from "./stores/LRoute";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="/catalog/:categ" element={<StrictCatalogPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
-          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/register" element={<LRoute element={<RegistrationPage />} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

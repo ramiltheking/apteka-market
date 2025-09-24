@@ -1,34 +1,181 @@
 .register-nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 24px;
 }
 
-.reg-back{
-    border: none;
-    background: none;
-    color: #2CAEFF;
-    font-size: 16px;
-    font-weight: 400;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    cursor: pointer;
+.reg-back {
+  border: none;
+  background: none;
+  color: #2caeff;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
 }
 
-.register-nav >h2 {
-    color: #2F2F2F;
-    font-weight: 600;
-    font-size: 16px;
-    margin: auto;
+.register-nav > h2 {
+  color: #2f2f2f;
+  font-weight: 600;
+  font-size: 16px;
+  margin: auto;
 }
 
 .register-container {
-    padding: 32px 0;
-    height: 100%;
+  padding: 32px 0px 0px;
+  height: 100%;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.form-label > label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-label > label > p {
+  padding-left: 16px;
+  color: #9fa5b2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.form-label > label > input,
+.form-label > label > div > input {
+  width: 100%;
+  height: 44px;
+  color: #2f2f2f;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background-color: #f3f6fa;
+  border-radius: 16px;
+}
+
+.form-label > label > input:focus-visible,
+.form-label > label > div > input:focus-visible {
+  border: #2f2f2f solid 1px;
+  outline: none;
+}
+
+.form-label > .desc-label {
+  color: #9fa5b2;
+  font-size: 11px;
+  font-weight: 400;
+  padding-left: 16px;
+}
+
+.password-label {
+  position: relative;
+}
+
+.form-label > label > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+}
+
+.password-label > div > button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  margin-right: 10px;
+}
+
+.error {
+  color: #c73434;
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: 16px;
+}
+
+.success {
+  color: #34c759;
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: 16px;
+}
+
+.sec-next {
+  width: 100%;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.sec-next > button {
+  width: 100%;
+  background-color: #32ADE6;
+  border-radius: 16px;
+  height: 48px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.sec-next>button:disabled {
+  background-color: #6cb9dd;
+}
+
+.sec-next > p {
+  font-size: 11px;
+  color: #A092AE;
+  padding: 0px 16px;
+}
+
+.sec-next > p > a, .desc-label > a, .form-label > label > p > a {
+  color: #43B7FF;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.pins {
+  display: flex;
+  width: 100%;
+  height: auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.pin {
+  width: inherit;
+  height: 44px;
+  border-radius: 16px;
+  text-align: center;
+  padding: 12px 0px;
+  background-color: #F3F6FA;
+  color: #000;
+}
+
+.pin-inp {
+  display: none;
 }
