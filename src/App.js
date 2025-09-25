@@ -7,6 +7,7 @@ import { ProductPage } from "./pages/ProductPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { StrictCatalogPage } from "./pages/StrictCatalogPage";
 import { RegistrationPage } from "./pages/RegistrationPage";
+import { LoginPage } from "./pages/LoginPage";
 import { AppProvider } from "./stores/AppContext";
 import LRoute  from "./stores/LRoute";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/register" element={<LRoute element={<RegistrationPage />} />} />
+          <Route path="/login" element={<LRoute element={<LoginPage />} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

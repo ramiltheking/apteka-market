@@ -3,15 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../css/RegistrationPage.css";
 
-export function RegistrationPage() {
+export function LoginPage() {
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     phone: "",
     password: "",
-    passwordD: "",
     code: "",
-    firstName: "",
-    lastName: "",
   });
   const [error, setError] = useState({ type: "error", value: "" });
   const [success, setSuccess] = useState(false);
@@ -84,18 +81,8 @@ export function RegistrationPage() {
   }
 
   useEffect(() => {
-    if (
-      form.password.length !== 0 &&
-      (form.password.length < 8 || form.passwordD.length < 8)
-    )
+    if (form.password.length !== 0 && form.password.length < 8)
       setError({ type: "error", value: "Пароль меньше 8 символов" });
-    else if (form.password !== form.passwordD)
-      setError({ type: "error", value: "Пароли не совпадают" });
-    else if (
-      form.password === form.passwordD &&
-      (form.password || form.passwordD !== "")
-    )
-      setError({ type: "success", value: "Высокая надежность" });
     else return;
   }, [form.password, form.passwordD]);
 
@@ -133,7 +120,7 @@ export function RegistrationPage() {
               <img src="/icons/back-reg.svg" alt="back-reg" />
               Назад
             </Link>
-            <h2>Регистрация</h2>
+            <h2>Вход</h2>
           </div>
 
           <div className="register-container">
@@ -172,15 +159,6 @@ export function RegistrationPage() {
                     <img src="/icons/pass-vis.svg" alt="pass-vis" />
                   </button>
                 </div>
-                <input
-                  id="passwordD"
-                  type={show ? "text" : "password"}
-                  name="passwordD"
-                  placeholder="Пароль"
-                  value={form.passwordD}
-                  onChange={handleChange}
-                  required
-                />
               </label>
               <p className={error.type === "error" ? "error" : "success"}>
                 {error.value}
@@ -196,21 +174,11 @@ export function RegistrationPage() {
               <button
                 onClick={nextStep}
                 disabled={
-                  !(
-                    form.phone &&
-                    form.password &&
-                    form.passwordD !== "" &&
-                    error.type !== "error"
-                  )
+                  !(form.phone && form.password && error.type !== "error")
                 }
               >
                 Получить код
               </button>
-              <p className="desc-label">
-                Нажимая «Получить код», вы соглашаетесь с{" "}
-                <a href="/">Лицензионным соглашением</a> и{" "}
-                <a href="/">Политикой конфиденциальности</a>
-              </p>
             </section>
           </div>
         </motion.div>
@@ -277,7 +245,7 @@ export function RegistrationPage() {
 
             <section className="sec-next">
               <button
-                onClick={nextStep}
+                onClick={handleSubmit}
                 disabled={
                   !(
                     form.code !== "" &&
@@ -295,66 +263,6 @@ export function RegistrationPage() {
 
       {step === 3 && (
         <motion.div
-          key="step3"
-          variants={variants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          style={{ height: "100%" }}
-          transition={{ duration: 0.4 }}
-        >
-          <div className="register-nav">
-            <button className="reg-back" onClick={prevStep}>
-              <img src="/icons/back-reg.svg" alt="back-reg" />
-              Назад
-            </button>
-            <h2>Личная информация</h2>
-          </div>
-
-          <div className="register-container">
-            <section className="form-label">
-              <label htmlFor="phone">
-                <p>ЛИЧНАЯ ИНФОРМАЦИЯ</p>
-                <input
-                  id="firstName"
-                  type="text"
-                  name="firstName"
-                  placeholder="Имя"
-                  value={form.firstName}
-                  onChange={(e) => handleChange(e)}
-                  required
-                />
-                <input
-                  id="lastName"
-                  type="text"
-                  name="lastName"
-                  placeholder="Фамилия"
-                  value={form.lastName}
-                  onChange={(e) => handleChange(e)}
-                  required
-                />
-              </label>
-              <p className="desc-label">
-                Курьер и сотрудники аптеки будут обращаться к вам по имени.
-              </p>
-            </section>
-
-            <section className="sec-next">
-              <button
-                onClick={handleSubmit}
-                disabled={
-                  !(form.firstName && form.lastName && error.type !== "error")
-                }
-              >
-                Продолжить
-              </button>
-            </section>
-          </div>
-        </motion.div>
-      )}
-
-      {step === 4 && (
-        <motion.div
           key="step4"
           variants={variants}
           initial="initial"
@@ -367,21 +275,23 @@ export function RegistrationPage() {
             <>
               <div className="register-container">
                 <section className="sec-success">
-                  <img className="sec-i" src="/icons/feedback-icon.svg" alt="feedback-icon" />
-                  <h2 className="sec-h">Регистрация завершена</h2>
-                  <p className="sec-p">
-                    Ваш аккаунт создан. Вы вошли в систему и можете начать
-                    работу
-                  </p>
+                  <img
+                    className="sec-i"
+                    src="/icons/feedback-icon.svg"
+                    alt="feedback-icon"
+                  />
+                  <h2 className="sec-h">Вы вошли в систему</h2>
                 </section>
 
                 <section className="sec-next">
-                  <Link className="n-l" to="/">Перейти на главную</Link>
+                  <Link className="n-l" to="/">
+                    Перейти на главную
+                  </Link>
                 </section>
               </div>
             </>
           ) : (
-            <h2>❌ Ошибка регистрации</h2>
+            <h2>❌ Ошибка авторизации</h2>
           )}
         </motion.div>
       )}

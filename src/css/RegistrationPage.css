@@ -19,6 +19,9 @@
   top: 0;
   left: 0;
   cursor: pointer;
+  text-decoration: none;
+  width: auto;
+  height: auto;
 }
 
 .register-nav > h2 {
@@ -81,7 +84,7 @@
   outline: none;
 }
 
-.form-label > .desc-label {
+.desc-label {
   color: #9fa5b2;
   font-size: 11px;
   font-weight: 400;
@@ -132,28 +135,52 @@
 
 .sec-next > button {
   width: 100%;
-  background-color: #32ADE6;
+  background-color: #32ade6;
   border-radius: 16px;
   height: 48px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 15px;
   font-weight: 600;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.sec-next>button:disabled {
+.n-l {
+  width: 100%;
+  background-color: #32ade6;
+  border-radius: 16px;
+  height: 48px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-next > button:disabled {
   background-color: #6cb9dd;
 }
 
 .sec-next > p {
   font-size: 11px;
-  color: #A092AE;
+  color: #a092ae;
   padding: 0px 16px;
 }
 
-.sec-next > p > a, .desc-label > a, .form-label > label > p > a {
-  color: #43B7FF;
+.sec-next > p > a,
+.desc-label > a,
+.form-label > label > p > a {
+  color: #43b7ff;
   font-size: 11px;
   text-decoration: none;
 }
@@ -172,10 +199,32 @@
   border-radius: 16px;
   text-align: center;
   padding: 12px 0px;
-  background-color: #F3F6FA;
+  background-color: #f3f6fa;
   color: #000;
 }
 
 .pin-inp {
   display: none;
+}
+
+.sec-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.sec-h {
+  color: #2f2f2f;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.sec-p {
+  color: #9fa5b2;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  width: 80%;
 }
