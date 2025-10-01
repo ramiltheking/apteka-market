@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../css/RegistrationPage.css";
+import { AppContext } from "../stores/AppContext";
 
 export function RegistrationPage() {
+  const { setUser } = useContext(AppContext);
+
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     phone: "",
@@ -367,7 +370,11 @@ export function RegistrationPage() {
             <>
               <div className="register-container">
                 <section className="sec-success">
-                  <img className="sec-i" src="/icons/feedback-icon.svg" alt="feedback-icon" />
+                  <img
+                    className="sec-i"
+                    src="/icons/feedback-icon.svg"
+                    alt="feedback-icon"
+                  />
                   <h2 className="sec-h">Регистрация завершена</h2>
                   <p className="sec-p">
                     Ваш аккаунт создан. Вы вошли в систему и можете начать
@@ -376,7 +383,20 @@ export function RegistrationPage() {
                 </section>
 
                 <section className="sec-next">
-                  <Link className="n-l" to="/">Перейти на главную</Link>
+                  <Link
+                    className="n-l"
+                    to="/"
+                    onClick={() => {
+                      setUser({
+                        phone: form.phone,
+                        password: form.password,
+                        firstName: form.firstName,
+                        lastName: form.lastName,
+                      });
+                    }}
+                  >
+                    Перейти на главную
+                  </Link>
                 </section>
               </div>
             </>

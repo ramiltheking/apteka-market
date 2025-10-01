@@ -3,8 +3,9 @@ import { createContext, useState } from "react";
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
+
   // Пользователь
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(null);
 
   // Избраное
   const [favorite, setFavorite] = useState([1, 2]);

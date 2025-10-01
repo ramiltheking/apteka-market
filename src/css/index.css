@@ -1,3 +1,17 @@
+/* Базовые переменные (светлая тема) */
+:root {
+  --bg: #ffffff;
+  --text: #5F5F5F;
+  --heading: #414141;
+}
+
+/* Тёмная тема */
+[data-theme="dark"] {
+  --bg: #1B1C1C;
+  --text: #fff;
+  --heading: #fff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

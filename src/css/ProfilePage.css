@@ -1,0 +1,63 @@
+.sectoin-profile {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.data-d {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    color: #5F5F5F;
+}
+
+.data-d > img {
+    width: 30px;
+}
+
+.data-d > a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #46b0fb;
+}
+
+.data-d > a > img {
+    width: 30px;
+}
+
+.user-exit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 70%;
+    max-width: 345px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #46B0FB1A;
+    color: #46B0FB;
+    border: none;
+}

@@ -1,3 +1,7 @@
+.catalog-s {
+  margin-bottom: auto;
+}
+
 .strict-catalog {
   display: grid;
   grid-template-columns: repeat(2, auto);

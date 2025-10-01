@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../css/RegistrationPage.css";
+import { AppContext } from "../stores/AppContext";
 
 export function LoginPage() {
+  const { setUser } = useContext(AppContext);
+
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     phone: "",
@@ -83,8 +86,8 @@ export function LoginPage() {
   useEffect(() => {
     if (form.password.length !== 0 && form.password.length < 8)
       setError({ type: "error", value: "Пароль меньше 8 символов" });
-    else return;
-  }, [form.password, form.passwordD]);
+    else setError("");
+  }, [form.password]);
 
   const handlePhoneChange = (e) => {
     let value = e.target.value.replace(/[^0-9+]/g, ""); // Оставляем только цифры и "+"
@@ -284,7 +287,14 @@ export function LoginPage() {
                 </section>
 
                 <section className="sec-next">
-                  <Link className="n-l" to="/">
+                  <Link className="n-l" to="/" onClick={() => {
+                      setUser({
+                        phone: form.phone,
+                        password: form.password,
+                        firstName: "Радислав",
+                        lastName: "Ткаченко",
+                      });
+                    }}>
                     Перейти на главную
                   </Link>
                 </section>

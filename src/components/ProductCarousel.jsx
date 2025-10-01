@@ -48,7 +48,7 @@ export function ProductCarousel() {
       >
         {products.map((p) => (
           <SwiperSlide key={p.id}>
-            <CardProductCarousel img={p.img} title={p.title} href="#" />
+            <CardProductCarousel img={p.img} title={p.title} href="/" />
           </SwiperSlide>
         ))}
       </Swiper>
