@@ -6,6 +6,8 @@ import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
 
+import Button from "@mui/material/Button";
+
 import { useContext } from "react";
 import { AppContext } from "../stores/AppContext";
 
@@ -135,9 +137,21 @@ function ProductPage() {
         </div>
         {/* </div> */}
 
-        <button
+        <Button
+          variant="contained"
           className="pay-btn"
           style={{
+            position: "fixed",
+            backgroundColor: "#46b0fb",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            width: "90vw",
+            zIndex: 2,
+            padding: "12px 20px",
             justifyContent: "center",
             cursor: "pointer",
             bottom: "80px",
@@ -186,7 +200,7 @@ function ProductPage() {
             ) : null}
             <p>{product.price} ₸</p>
           </div>
-        </button>
+        </Button>
 
         <Footer />
       </>

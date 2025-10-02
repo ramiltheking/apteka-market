@@ -108,7 +108,7 @@ export function RecommendedSection() {
         <h2>Вам может понравиться</h2>
         <Link to="/catalog">Весь список {">"}</Link>
       </div>
-      <Swiper width={350} slidesPerView="2.5">
+      <Swiper slidesPerView="2.5">
         {products.map((p) => (
           <SwiperSlide key={p.id}>
             <CardProductRecommended key={p.id} product={p} />

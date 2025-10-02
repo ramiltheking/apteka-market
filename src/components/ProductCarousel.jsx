@@ -39,7 +39,6 @@ export function ProductCarousel() {
     <div style={{ width: "100%", position: "relative" }}>
       <Swiper
         ref={swiperRef}
-        width={350}
         spaceBetween={10}
         slidesPerView={3.3}
         onSlideChange={(swiper) => {

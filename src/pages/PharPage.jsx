@@ -43,7 +43,7 @@ function PharPage() {
             src="https://yandex.ru/map-widget/v1/?um=constructor%3A82c8e64ce455dc86160d1e8e415bc9c2494060b2e8a28c05d8ddc342cf9dc3b5&amp;source=constructor"
             width="100%"
             height="100%"
-            frameborder="0"
+            frameBorder="0"
           ></iframe>
         </div>
       ) : (
