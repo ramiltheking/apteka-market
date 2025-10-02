@@ -286,14 +286,18 @@ function LoginPage() {
                 </section>
 
                 <section className="sec-next">
-                  <Link className="n-l" to="/" onClick={() => {
+                  <Link
+                    className="n-l"
+                    to="/"
+                    onClick={() => {
                       setUser({
                         phone: form.phone,
                         password: form.password,
                         firstName: "Радислав",
                         lastName: "Ткаченко",
                       });
-                    }}>
+                    }}
+                  >
                     Перейти на главную
                   </Link>
                 </section>

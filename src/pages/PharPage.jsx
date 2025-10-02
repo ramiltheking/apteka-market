@@ -16,7 +16,7 @@ function PharPage() {
     <>
       <div className="navigation-bar">
         <button className="control-title" onClick={() => navigate(-1)}>
-          <span>{"<"}</span>
+          <img src="/icons/back-reg.svg" alt="back-reg" />
           <h2>Список аптек</h2>
         </button>
 

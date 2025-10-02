@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { AppContext } from "../stores/AppContext";
 import { useContext } from "react";
 
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function ProfilePage() {
     <>
       <div className="navigation-bar">
         <button className="control-title" onClick={() => navigate(-1)}>
-          <span>{"<"}</span>
+          <img src="/icons/back-reg.svg" alt="back-reg" />
           <h2>Профиль</h2>
         </button>
       </div>
@@ -32,11 +32,16 @@ function ProfilePage() {
             </p>
             <p className="data-d">
               <Link to="/settings">
-                <img src="/icons/settings.svg" alt="settings" />Настройки{" "}
-                <img width={30} src="/icons/to.svg" alt="to" />
+                <img src="/icons/settings.svg" alt="settings" />
+                Настройки <img width={30} src="/icons/to.svg" alt="to" />
               </Link>
             </p>
-            <Button variant="contained" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>Переключить тему</Button>
+            <Button
+              variant="contained"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              Переключить тему
+            </Button>
           </div>
         </div>
 

@@ -46,7 +46,7 @@ function FavoritePage() {
     <>
       <div className="navigation-bar">
         <button className="control-title" onClick={() => navigate(-1)}>
-          <span>{"<"}</span>
+          <img src="/icons/back-reg.svg" alt="back-reg" />
           <h2>Избранные товары</h2>
         </button>
       </div>
