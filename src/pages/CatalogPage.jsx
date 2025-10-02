@@ -2,7 +2,7 @@ import { CatalogSection } from "../components/CatalogSection";
 import { Footer } from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 
-export function CatalogPage() {
+function CatalogPage() {
   const navigate = useNavigate();
 
   return (
@@ -20,3 +20,5 @@ export function CatalogPage() {
     </>
   );
 }
+
+export default CatalogPage;

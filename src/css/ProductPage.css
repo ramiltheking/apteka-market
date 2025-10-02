@@ -94,7 +94,7 @@
 
 .product-labels > h1 {
   font-size: 15px;
-  color: #414141;
+  color: var(--text);
 }
 
 .product-labels > h1 > span {
@@ -111,7 +111,7 @@
 }
 
 .delivery-info > p {
-  color: #5f5f5f;
+  color: var(--text);
   font-size: 400;
   font-size: 12px;
 }
@@ -157,7 +157,7 @@
 .product-desc {
   font-size: 12px;
   font-weight: 400;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .product-features {
@@ -169,7 +169,7 @@
 }
 
 .product-features > li {
-  color: #5f5f5f;
+  color: var(--text);
   font-size: 12px;
   font-weight: 400;
 }

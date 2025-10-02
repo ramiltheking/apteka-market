@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../stores/AppContext";
 
-export function FavoritePage() {
+function FavoritePage() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const { favorite } = useContext(AppContext);
@@ -58,3 +58,5 @@ export function FavoritePage() {
     </>
   );
 }
+
+export default FavoritePage;

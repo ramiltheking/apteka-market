@@ -1,8 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
+  // Тема
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   // Пользователь
   const [user, setUser] = useState(null);
@@ -76,6 +81,8 @@ export function AppProvider({ children }) {
         setFavorite,
         user,
         setUser,
+        theme,
+        setTheme,
       }}
     >
       {children}

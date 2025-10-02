@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { CardProductRecommended } from "./CardProductRecommended";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "../css/RecommendedSection.css";
 import { Link } from "react-router-dom";
 
 export function RecommendedSection() {

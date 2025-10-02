@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export function StrictCatalogPage() {
+function StrictCatalogPage() {
   const navigate = useNavigate();
   let { categ } = useParams();
   const [products, setProducts] = useState([]);
@@ -121,3 +121,5 @@ export function StrictCatalogPage() {
     </>
   );
 }
+
+export default StrictCatalogPage;

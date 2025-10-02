@@ -12,9 +12,9 @@
   height: 45px;
   padding: 12px;
   padding-left: 44px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: var(--bg);
   outline: none;
   color: #bdbecb;
   transition: all 0.5s ease;
@@ -32,13 +32,13 @@
 
 .search-input:focus {
   border: 1px solid #5f5f5f;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .search-icon {
   position: absolute;
   left: 12px;
-  fill: #5f5f5f;
+  fill: var(--icon);
   width: 20px;
   height: 20px;
   pointer-events: none;
@@ -46,7 +46,7 @@
 }
 
 .favorites {
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 12px;
   gap: 8px;

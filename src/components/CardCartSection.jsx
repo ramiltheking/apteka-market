@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AppContext } from "../stores/AppContext";
-import "../css/CardCartSection.css";
 import { Link } from "react-router-dom";
 
 export function CardCartSection({ product, operPr }) {

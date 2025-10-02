@@ -19,7 +19,7 @@
   position: absolute;
   width: 10px;
   height: 5px;
-  background: #fff;
+  background: var(--bg);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 100%;
@@ -35,7 +35,7 @@
 
 .coupon::after {
   left: 37px;
-  bottom: 0;
+  bottom: -1px;
   transform: rotate(180deg);
 }
 

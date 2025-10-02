@@ -76,7 +76,7 @@
 .name {
   font-weight: 400;
   font-size: 12px;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .weight {
@@ -117,7 +117,7 @@
 .price {
   font-weight: 600;
   font-size: 12px;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .discount {
@@ -206,13 +206,13 @@ a:active {
 .cart-clear-title {
   font-weight: 600;
   font-size: 16px;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .cart-clear-desc {
   font-weight: 400;
   font-size: 12px;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .pay-btn {

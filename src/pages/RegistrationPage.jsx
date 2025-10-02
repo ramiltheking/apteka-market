@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import "../css/RegistrationPage.css";
 import { AppContext } from "../stores/AppContext";
 
-export function RegistrationPage() {
+function RegistrationPage() {
   const { setUser } = useContext(AppContext);
 
   const [step, setStep] = useState(1);
@@ -409,3 +408,5 @@ export function RegistrationPage() {
     // </div>
   );
 }
+
+export default RegistrationPage;

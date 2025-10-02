@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Footer } from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 
-export function PharPage() {
+function PharPage() {
   const [deliveryListMode, setDeliveryListMode] = useState({
     mode: true,
   });
@@ -54,3 +54,5 @@ export function PharPage() {
     </>
   );
 }
+
+export default PharPage;

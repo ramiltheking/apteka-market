@@ -2,11 +2,12 @@ import { Footer } from "../components/Footer";
 import { useNavigate, Link } from "react-router-dom";
 import { AppContext } from "../stores/AppContext";
 import { useContext } from "react";
-import "../css/ProfilePage.css";
 
-export function ProfilePage() {
+import Button from '@mui/material/Button';
+
+function ProfilePage() {
   const navigate = useNavigate();
-  const { user } = useContext(AppContext);
+  const { user, theme, setTheme } = useContext(AppContext);
 
   return (
     <>
@@ -31,10 +32,11 @@ export function ProfilePage() {
             </p>
             <p className="data-d">
               <Link to="/settings">
-                <img src="/icons/settings.svg" alt="settings" /> Настройки{" "}
+                <img src="/icons/settings.svg" alt="settings" />Настройки{" "}
                 <img width={30} src="/icons/to.svg" alt="to" />
               </Link>
             </p>
+            <Button variant="contained" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>Переключить тему</Button>
           </div>
         </div>
 
@@ -47,3 +49,5 @@ export function ProfilePage() {
     </>
   );
 }
+
+export default ProfilePage;

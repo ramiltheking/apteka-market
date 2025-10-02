@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AppContext } from "../stores/AppContext";
-import "../css/CardStrictCatalog.css";
 import { Link } from "react-router-dom";
 
 export function CardStrictCatalog({ product }) {

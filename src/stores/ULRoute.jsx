@@ -1,6 +1,6 @@
 import { AppContext } from "./AppContext";
 import { useContext } from "react";
-import { NotFoundPage } from "../pages/NotFoundPage";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const ULRoute = ({ element, login }) => {
   const { user } = useContext(AppContext);

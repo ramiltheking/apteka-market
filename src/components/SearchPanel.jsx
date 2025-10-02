@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { AppContext } from "../stores/AppContext";
-import "../css/SearchPanel.css";
 import { Link } from "react-router-dom";
 
 export function SearchPanel() {

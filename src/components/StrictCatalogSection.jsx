@@ -3,7 +3,6 @@ import { CardStrictCatalog } from "./CardStrictCatalog";
 import { Modal } from "./Modal";
 import { Sort } from "./Sort";
 import { Filter } from "./Filter";
-import "../css/StrictCatalogSection.css";
 
 export function StrictCatalogSection({ products }) {
   const [modalOpen, setModalOpen] = useState(false);

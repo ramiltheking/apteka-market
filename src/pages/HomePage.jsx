@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { AppContext } from "../stores/AppContext";
 import { Footer } from "../components/Footer";
 import { ProductCarousel } from "../components/ProductCarousel";
@@ -6,10 +6,9 @@ import { SearchPanel } from "../components/SearchPanel";
 import { RecommendedSection } from "../components/RecommendedSection";
 import { Widgets } from "../components/Widgets";
 import { Link } from "react-router-dom";
-import "../css/HomePage.css";
 
-export function HomePage() {
-   const { delivery, setDelivery } = useContext(AppContext);
+function HomePage() {
+  const { delivery, setDelivery } = useContext(AppContext);
 
   function btnDeliverySwitch(m) {
     setDelivery({ ...delivery, mode: m });
@@ -62,3 +61,5 @@ export function HomePage() {
     </>
   );
 }
+
+export default HomePage;

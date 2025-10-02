@@ -1,7 +1,7 @@
 import { Footer } from "../components/Footer";
 import { useNavigate, Link } from "react-router-dom";
 
-export function NotFoundPage() {
+function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
@@ -37,3 +37,6 @@ export function NotFoundPage() {
     </>
   );
 }
+
+
+export default NotFoundPage;

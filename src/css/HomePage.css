@@ -29,7 +29,7 @@
   overflow: hidden;
   white-space: nowrap;
   font-size: 12px;
-  color: #5f5f5f;
+  color: var(--text);
 }
 
 .addr-row-time {
@@ -41,7 +41,7 @@
   font-weight: 400;
   font-style: regular;
   font-size: 12px;
-  color: #5f5f5f;
+  color: var(--text);
   gap: 4px;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .navigation-title {
-  color: #414141;
+  color: var(--heading);
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -68,7 +68,7 @@
 }
 
 .control-title > h2 {
-  color: #414141;
+  color: var(--heading);
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -85,7 +85,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: var(--inp-b);
   width: 100%;
   border-radius: 12px;
 }
@@ -95,8 +95,8 @@
   height: 36px;
   padding: 10px;
   border-radius: 10px;
-  color: #8b8b8b;
-  background-color: #fff;
+  color: var(--text);
+  background-color: var(--sec);
   font-size: 14px;
   font-weight: 400;
   text-align: center;

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../css/CardProductCarousel.css";
 
 export function CardProductCarousel({ img, title, href }) {
   return (

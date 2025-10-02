@@ -5,12 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
-import "../css/ProductPage.css";
 
 import { useContext } from "react";
 import { AppContext } from "../stores/AppContext";
 
-export function ProductPage() {
+function ProductPage() {
   let { id } = useParams();
   const [product, setProduct] = useState(null);
   const navigate = useNavigate();
@@ -194,3 +193,5 @@ export function ProductPage() {
     );
   }
 }
+
+export default ProductPage;

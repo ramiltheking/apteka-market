@@ -3,9 +3,8 @@ import { AppContext } from "../stores/AppContext";
 import { Footer } from "../components/Footer";
 import { CartSection } from "../components/CartSection";
 import { Link } from "react-router-dom";
-import "../css/CartPage.css";
 
-export function CartPage() {
+function CartPage() {
   const { delivery } = useContext(AppContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -66,3 +65,5 @@ export function CartPage() {
     </>
   );
 }
+
+export default CartPage;

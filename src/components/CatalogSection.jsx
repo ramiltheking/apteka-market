@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { CardCatalog } from "./CardCatalog";
-import "../css/CatalogSection.css";
 
 export function CatalogSection() {
   const [catalogs, setCatalogs] = useState([]);

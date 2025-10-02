@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../css/Widgets.css";
 
 export function Widgets() {
   return (

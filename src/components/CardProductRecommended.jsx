@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../css/CardProductRecommended.css";
 import { useContext } from "react";
 import { AppContext } from "../stores/AppContext";
 

@@ -27,7 +27,7 @@
     flex-direction: row;
     align-items: center;
     gap: 5px;
-    color: #5F5F5F;
+    color: var(--text);
 }
 
 .data-d > img {
