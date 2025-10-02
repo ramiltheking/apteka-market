@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../stores/AppContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export function CardStrictCatalog({ product }) {
-  const { favorite, setFavorite } = useContext(AppContext);
-  const { setCart } = useContext(AppContext);
+  const { favorite, setFavorite, setCart } = useContext(AppContext);
+  const [clicked, setClicked] = useState(false);
 
   return (
     <Link className="card-product-strict" to={`/products/${product.id}`}>
@@ -28,10 +29,7 @@ export function CardStrictCatalog({ product }) {
             });
           }}
         >
-          <img
-            src="/icons/heart.svg"
-            alt="heart"
-          />
+          <img src="/icons/heart.svg" alt="heart" />
         </button>
       </div>
 
@@ -52,6 +50,8 @@ export function CardStrictCatalog({ product }) {
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
+          setClicked(true);
+          setTimeout(() => setClicked(false), 200);
           setCart((prev) => {
             const exist = prev.find((item) => item.id === product.id);
 
@@ -98,7 +98,14 @@ export function CardStrictCatalog({ product }) {
             </div>
           ) : null}
         </div>
-        <img src="/icons/grocery.svg" alt="grocery" />
+        <motion.img
+          src="/icons/grocery.svg"
+          alt="grocery"
+          animate={
+            clicked ? { scale: 1.2, rotate: 15 } : { scale: 1, rotate: 0 }
+          }
+          transition={{ type: "spring", stiffness: 300, damping: 10 }}
+        />
       </button>
     </Link>
   );

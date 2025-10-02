@@ -45,9 +45,30 @@ function ProfilePage() {
           </div>
         </div>
 
-        <button className="user-exit">
+        <Button
+          className="user-exit"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            width: "70%",
+            maxWidth: "345px",
+            height: "50px",
+            borderRadius: "8px",
+            backgroundColor: " #46b0fb1a",
+            color: "#46b0fb",
+            border: "none",
+            position: "fixed",
+            bottom: "100px",
+            zIndex: "2",
+            textTransform: "none",
+            fontFamily:"Inter"
+          }}
+        >
           <img src="/icons/sign-in.svg" alt="exit" /> Выйти
-        </button>
+        </Button>
       </section>
 
       <Footer />

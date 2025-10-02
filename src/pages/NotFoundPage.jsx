@@ -1,5 +1,7 @@
 import { Footer } from "../components/Footer";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import Button from "@mui/material/Button";
 
 function NotFoundPage() {
   const navigate = useNavigate();
@@ -27,16 +29,33 @@ function NotFoundPage() {
       </div>
 
       <div className="cart-clear-widget">
-        <Link to="/login" className="sign-in">
+
+        <Button
+          className="sign-in"
+          style={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+            borderRadius: "16px",
+            border: "none",
+            background: "#46b0fb1a",
+            width: "100%",
+            padding: " 16px 0",
+            textTransform: "none",
+            fontFamily:"Inter"
+          }}
+          onClick={()=>navigate("/login")}
+        >
           <img src="/icons/sign-in.svg" alt="sign-in" />
           <p>Войти</p>
-        </Link>
+        </Button>
       </div>
 
       <Footer />
     </>
   );
 }
-
 
 export default NotFoundPage;

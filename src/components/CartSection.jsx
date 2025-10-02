@@ -1,15 +1,39 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
+import Button from "@mui/material/Button";
 import { CardCartSection } from "../components/CardCartSection";
 
 export function CartSection({ products, operPr, total }) {
+  const navigate = useNavigate();
+
   useEffect(() => {
     console.log(products);
   }, [products]);
 
   function PayBtn() {
     return (
-      <button className="pay-btn">
+      <Button
+        className="pay-btn"
+        style={{
+          position: "fixed",
+          backgroundColor: "#46b0fb",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "90vw",
+          bottom: "100px",
+          zIndex: "2",
+          padding: " 12px 20px",
+          textTransform: "none",
+          fontFamily: "Inter",
+        }}
+        onClick={() => navigate("/cart/pay")}
+      >
         <div className="pay-price">
           <img src="/icons/pay.svg" alt="pay" />
           <p>{total} ₸</p>
@@ -18,7 +42,7 @@ export function CartSection({ products, operPr, total }) {
         <Link className="pay-link" to="/cart/pay">
           Перейти к оформлению
         </Link>
-      </button>
+      </Button>
     );
   }
 
@@ -39,20 +63,54 @@ export function CartSection({ products, operPr, total }) {
             <div>
               <h2 className="cart-clear-title">В корзине пусто!</h2>
               <p className="cart-clear-desc">
-                Выберите что-нибутьиз аптек, что бы оформить заказ
+                Выберите что-нибуть из аптек, что бы оформить заказ
               </p>
             </div>
           </div>
 
           <div className="cart-clear-widget">
-            <Link to="/login" className="sign-in">
+            <Button
+              className="sign-in"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                borderRadius: "16px",
+                border: "none",
+                background: "#46b0fb1a",
+                width: "100%",
+                padding: " 16px 0",
+                textTransform: "none",
+                fontFamily: "Inter",
+              }}
+              onClick={() => navigate("/login")}
+            >
               <img src="/icons/sign-in.svg" alt="sign-in" />
               <p>Войти</p>
-            </Link>
-            <Link to="/catalog" className="add-basket">
+            </Button>
+            <Button
+              onClick={() => navigate("/catalog")}
+              className="add-basket"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                borderRadius: "16px",
+                border: "none",
+                background: "#46b0fb",
+                width: "100%",
+                padding: "16px 0",
+                textTransform: "none",
+                fontFamily: "Inter",
+              }}
+            >
               <img src="/icons/add-to-busket.svg" alt="add-to-busket" />
               <p>За покупками</p>
-            </Link>
+            </Button>
           </div>
         </>
       )}

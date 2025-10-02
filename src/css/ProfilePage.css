@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: auto;
 }
 
 .profile-data {
@@ -15,49 +16,52 @@
 }
 
 .user-data {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
 }
 
 .data-d {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    color: var(--text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
 }
 
 .data-d > img {
-    width: 30px;
+  width: 30px;
 }
 
 .data-d > a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: #46b0fb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #46b0fb;
 }
 
 .data-d > a > img {
-    width: 30px;
+  width: 30px;
 }
 
 .user-exit {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 70%;
-    max-width: 345px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: #46B0FB1A;
-    color: #46B0FB;
-    border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 70%;
+  max-width: 345px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #46b0fb1a;
+  color: #46b0fb;
+  border: none;
+  position: fixed;
+  bottom: 100px;
+  z-index: 2;
 }

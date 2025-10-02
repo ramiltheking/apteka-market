@@ -13,7 +13,8 @@
 
 .card-catalog > p {
   color: var(--text);
-  padding: 10px 12px;
+  /* padding: 10px 12px; */
+  line-break: anywhere;
   text-align: left;
 }
 

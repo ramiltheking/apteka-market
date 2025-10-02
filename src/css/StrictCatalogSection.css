@@ -9,7 +9,6 @@
   grid-column-gap: 12px;
   grid-row-gap: 20px;
   width: 100%;
-  padding-bottom: 150px;
 }
 
 .bar-catalog {
@@ -162,7 +161,7 @@
 }
 
 .sort-form > .inp-div input[type="radio"]:checked {
-  background-color: #fff;
+  background-color: var(--sec);
   border: 1.5px solid #46b0fb;
 }
 
@@ -182,7 +181,7 @@
 /* если radio выбран — меняем цвет текста label */
 .sort-form > .inp-div input[type="radio"]:checked + span,
 .sort-form > .inp-div:has(input[type="radio"]:checked) {
-  color: #414141;
+  color: var(--heading);
 }
 
 .chapter {
